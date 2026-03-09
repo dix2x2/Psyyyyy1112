@@ -1,0 +1,27 @@
+import { motion } from 'motion/react';
+import { useLanguage } from '../contexts/LanguageContext';
+
+export default function TermsOfService() {
+  const { t } = useLanguage();
+
+  return (
+    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        <h1 className="text-4xl font-serif text-stone-900 dark:text-stone-50 mb-6 transition-colors">{t('termsOfService.title')}</h1>
+        <p className="text-2xl text-stone-700 dark:text-stone-300 mb-12 leading-relaxed transition-colors">
+          {t('termsOfService.subtitle')}
+        </p>
+
+        <div className="space-y-8 text-lg text-stone-800 dark:text-stone-300 leading-relaxed transition-colors">
+          <p>{t('termsOfService.p1')}</p>
+          <p>{t('termsOfService.p2')}</p>
+          <p>{t('termsOfService.p3')}</p>
+        </div>
+      </motion.div>
+    </div>
+  );
+}
