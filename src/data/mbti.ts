@@ -37,6 +37,50 @@ export const mbtiQuestions: MBTIQuestion[] = [
   { id: 'mbti22', text: 'You feel more comfortable when things are decided, settled, and finalized.', dimension: 'JP', direction: 1 },
   { id: 'mbti23', text: 'Your workspace and living areas are highly organized and tidy.', dimension: 'JP', direction: 1 },
   { id: 'mbti24', text: 'You prefer to adapt to situations as they happen rather than planning ahead.', dimension: 'JP', direction: -1 },
+  
+  // Extended Questions (EI)
+  { id: 'mbti25', text: 'You enjoy participating in group activities.', dimension: 'EI', direction: 1 },
+  { id: 'mbti26', text: 'You prefer reading a book or watching a movie alone rather than attending a social gathering.', dimension: 'EI', direction: -1 },
+  { id: 'mbti27', text: 'You find it easy to mingle with people you have never met before.', dimension: 'EI', direction: 1 },
+  { id: 'mbti28', text: 'You often feel drained after socializing and need time alone to recharge.', dimension: 'EI', direction: -1 },
+  { id: 'mbti29', text: 'You are usually the one to start conversations in social settings.', dimension: 'EI', direction: 1 },
+  { id: 'mbti30', text: 'You tend to avoid drawing attention to yourself.', dimension: 'EI', direction: -1 },
+  { id: 'mbti31', text: 'You feel energized when you are surrounded by a lot of people.', dimension: 'EI', direction: 1 },
+  { id: 'mbti32', text: 'You prefer one-on-one conversations over group discussions.', dimension: 'EI', direction: -1 },
+  { id: 'mbti33', text: 'You are quick to share your thoughts and feelings with others.', dimension: 'EI', direction: 1 },
+
+  // Extended Questions (SN)
+  { id: 'mbti34', text: 'You often get lost in your thoughts and ignore your surroundings.', dimension: 'SN', direction: -1 },
+  { id: 'mbti35', text: 'You pay close attention to the physical details of your environment.', dimension: 'SN', direction: 1 },
+  { id: 'mbti36', text: 'You are more interested in what could be rather than what is.', dimension: 'SN', direction: -1 },
+  { id: 'mbti37', text: 'You prefer practical, hands-on tasks over theoretical discussions.', dimension: 'SN', direction: 1 },
+  { id: 'mbti38', text: 'You often spend time thinking about the future and various possibilities.', dimension: 'SN', direction: -1 },
+  { id: 'mbti39', text: 'You trust your past experiences more than sudden inspirations.', dimension: 'SN', direction: 1 },
+  { id: 'mbti40', text: 'You enjoy discussing philosophical or abstract concepts.', dimension: 'SN', direction: -1 },
+  { id: 'mbti41', text: 'You prefer to focus on the present moment and tangible realities.', dimension: 'SN', direction: 1 },
+  { id: 'mbti42', text: 'You often find yourself daydreaming about fantastical scenarios.', dimension: 'SN', direction: -1 },
+
+  // Extended Questions (TF)
+  { id: 'mbti43', text: 'You believe it is more important to be tactful than to tell the blunt truth.', dimension: 'TF', direction: -1 },
+  { id: 'mbti44', text: 'You base your decisions primarily on logic and objective analysis.', dimension: 'TF', direction: 1 },
+  { id: 'mbti45', text: 'You are deeply affected by the emotional pain of others.', dimension: 'TF', direction: -1 },
+  { id: 'mbti46', text: 'You value rationality and consistency over emotional considerations.', dimension: 'TF', direction: 1 },
+  { id: 'mbti47', text: 'You often prioritize the needs and feelings of others above your own.', dimension: 'TF', direction: -1 },
+  { id: 'mbti48', text: 'You find it easy to remain calm and objective during emotional situations.', dimension: 'TF', direction: 1 },
+  { id: 'mbti49', text: 'You believe that compassion is more important than strict justice.', dimension: 'TF', direction: -1 },
+  { id: 'mbti50', text: 'You prefer to analyze a problem from a detached, impersonal perspective.', dimension: 'TF', direction: 1 },
+  { id: 'mbti51', text: 'You often make decisions based on what feels right in your heart.', dimension: 'TF', direction: -1 },
+
+  // Extended Questions (JP)
+  { id: 'mbti52', text: 'You prefer to go with the flow rather than having a strict schedule.', dimension: 'JP', direction: -1 },
+  { id: 'mbti53', text: 'You like to complete your work well before the deadline.', dimension: 'JP', direction: 1 },
+  { id: 'mbti54', text: 'You often change your plans at the last minute.', dimension: 'JP', direction: -1 },
+  { id: 'mbti55', text: 'You feel anxious when things are left undecided or up in the air.', dimension: 'JP', direction: 1 },
+  { id: 'mbti56', text: 'You enjoy the spontaneity of not knowing what will happen next.', dimension: 'JP', direction: -1 },
+  { id: 'mbti57', text: 'You prefer to have a clear structure and routine in your daily life.', dimension: 'JP', direction: 1 },
+  { id: 'mbti58', text: 'You find it easy to adapt to unexpected changes in your schedule.', dimension: 'JP', direction: -1 },
+  { id: 'mbti59', text: 'You like to make to-do lists and check off completed tasks.', dimension: 'JP', direction: 1 },
+  { id: 'mbti60', text: 'You prefer to keep your options open as long as possible before making a choice.', dimension: 'JP', direction: -1 },
 ];
 
 export const mbtiTypes: Record<string, { 
@@ -46,6 +90,7 @@ export const mbtiTypes: Record<string, {
   weaknesses: string[];
   cognitiveFunctions: { dominant: string; auxiliary: string; tertiary: string; inferior: string };
   researchInsights: string[];
+  interestingFacts: string[];
 }> = {
   'INTJ': {
     title: 'The Architect',
@@ -57,6 +102,11 @@ export const mbtiTypes: Record<string, {
       'Research indicates INTJs are highly overrepresented in STEM fields, particularly engineering and computer science.',
       'Studies show they often score highest among all types in academic achievement and IQ testing.',
       'Under extreme stress, they may fall into the grip of their inferior function (Se), leading to overindulgence in sensory experiences (e.g., binge eating, overspending).'
+    ],
+    interestingFacts: [
+      'Often referred to as "Systems Builders" due to their natural affinity for complex strategy.',
+      'Statistically one of the types most likely to enjoy chess and strategy games.',
+      'Despite being introverts, they often rise to leadership roles due to their competence and vision.'
     ]
   },
   'INTP': {
@@ -69,6 +119,11 @@ export const mbtiTypes: Record<string, {
       'Statistically, INTPs are among the most likely types to study foreign languages and theoretical sciences.',
       'Research shows they often score very high on the Openness to Experience trait in the Big Five personality model.',
       'They frequently report lower levels of job satisfaction in highly structured, bureaucratic environments.'
+    ],
+    interestingFacts: [
+      'Frequently over-represented in mathematics, philosophy, and theoretical physics.',
+      'Known for their "chameleon" ability to blend in socially when necessary, despite being highly introverted.',
+      'Often have a highly precise and pedantic use of language.'
     ]
   },
   'ENTJ': {
@@ -81,6 +136,11 @@ export const mbtiTypes: Record<string, {
       'ENTJs are statistically the highest earners among all MBTI types according to multiple demographic studies.',
       'They are highly overrepresented in executive leadership and management positions.',
       'Research indicates they tend to have high stress tolerance but may struggle with emotional burnout if their Fi is neglected.'
+    ],
+    interestingFacts: [
+      'Statistically the highest-earning MBTI type on average.',
+      'Often referred to as "Field Marshals" for their ability to mobilize resources and people.',
+      'Highly resilient to stress compared to other types.'
     ]
   },
   'ENTP': {
@@ -93,6 +153,11 @@ export const mbtiTypes: Record<string, {
       'ENTPs show a strong correlation with entrepreneurial ventures and self-employment.',
       'Studies suggest they are highly adaptable and often score high on measures of creative problem-solving.',
       'They frequently struggle with task completion, often preferring the ideation phase over execution.'
+    ],
+    interestingFacts: [
+      'Often called the "Devil\'s Advocate" because they enjoy arguing points they don\'t even believe in just for the intellectual exercise.',
+      'Highly represented among entrepreneurs and startup founders.',
+      'Known for having many unfinished projects due to their preference for idea generation over execution.'
     ]
   },
   'INFJ': {
@@ -105,6 +170,11 @@ export const mbtiTypes: Record<string, {
       'INFJs are statistically the rarest MBTI type, making up roughly 1-2% of the population.',
       'Research shows they are highly represented in counseling, psychology, and teaching professions.',
       'They are particularly prone to "burnout" due to their high empathy and tendency to absorb others\' emotional burdens.'
+    ],
+    interestingFacts: [
+      'Statistically the rarest MBTI type, making up only 1-2% of the population.',
+      'Often described as having a "sixth sense" about people\'s true motives.',
+      'Highly prone to perfectionism and burnout due to their deep empathy combined with high standards.'
     ]
   },
   'INFP': {
@@ -117,6 +187,11 @@ export const mbtiTypes: Record<string, {
       'INFPs consistently score highest on measures of empathy and emotional intelligence in comparative studies.',
       'They are highly represented in creative writing, arts, and humanities.',
       'Research indicates they may struggle with depression or anxiety more frequently than other types, often due to a mismatch between their ideals and reality.'
+    ],
+    interestingFacts: [
+      'Consistently score the highest on measures of empathy and emotional intelligence.',
+      'Highly represented in creative writing, poetry, and the arts.',
+      'Often struggle with feeling misunderstood due to their deeply internal value system.'
     ]
   },
   'ENFJ': {
@@ -129,6 +204,11 @@ export const mbtiTypes: Record<string, {
       'ENFJs are frequently found in educational leadership, HR, and public relations roles.',
       'Studies show they have highly developed interpersonal skills and are often perceived as highly persuasive.',
       'They tend to base their self-worth heavily on their ability to help others, which can lead to boundary issues.'
+    ],
+    interestingFacts: [
+      'Often referred to as "The Protagonist" or "The Teacher" due to their natural charisma and desire to guide others.',
+      'Highly persuasive and often found in roles involving public speaking or counseling.',
+      'Can struggle with setting boundaries because they are so attuned to others\' needs.'
     ]
   },
   'ENFP': {
@@ -141,6 +221,11 @@ export const mbtiTypes: Record<string, {
       'ENFPs are highly represented in journalism, counseling, and the arts.',
       'Research suggests they are highly adaptable to change but struggle significantly with routine and micromanagement.',
       'They often score very high on verbal fluency and divergent thinking tests.'
+    ],
+    interestingFacts: [
+      'Known for their infectious enthusiasm and ability to see potential in almost anything.',
+      'Highly adaptable but often struggle with strict routines and micromanagement.',
+      'Often score very high on tests of verbal fluency and divergent thinking.'
     ]
   },
   'ISTJ': {
@@ -153,6 +238,11 @@ export const mbtiTypes: Record<string, {
       'ISTJs are one of the most common types, making up about 13% of the population.',
       'They are highly overrepresented in accounting, law enforcement, and military roles.',
       'Studies show they have the highest retention rates in corporate jobs due to their strong sense of duty and loyalty.'
+    ],
+    interestingFacts: [
+      'One of the most common types, making up about 13% of the population.',
+      'Often referred to as "The Inspector" for their meticulous attention to detail and rules.',
+      'Have the highest retention rate in corporate jobs due to their strong sense of duty.'
     ]
   },
   'ISFJ': {
@@ -165,6 +255,11 @@ export const mbtiTypes: Record<string, {
       'ISFJs are the most common MBTI type, particularly among women.',
       'They are highly represented in healthcare, teaching, and administrative support roles.',
       'Research indicates they have excellent memory for details, particularly those related to people and past experiences.'
+    ],
+    interestingFacts: [
+      'The most common MBTI type, especially among women.',
+      'Often referred to as "The Defender" or "The Nurturer" due to their deep loyalty and protective nature.',
+      'Have an excellent memory for details, especially those related to people and past experiences.'
     ]
   },
   'ESTJ': {
@@ -177,6 +272,11 @@ export const mbtiTypes: Record<string, {
       'ESTJs are highly represented in management, law, and business administration.',
       'Studies show they are highly effective at implementing systems and maintaining order in chaotic environments.',
       'They may struggle with sudden changes or abstract theories that lack immediate practical application.'
+    ],
+    interestingFacts: [
+      'Highly represented in management, law enforcement, and business administration.',
+      'Often referred to as "The Executive" for their ability to bring order to chaotic environments.',
+      'Value tradition and often take on roles that uphold societal structures.'
     ]
   },
   'ESFJ': {
@@ -189,6 +289,11 @@ export const mbtiTypes: Record<string, {
       'ESFJs are highly represented in nursing, teaching, and social work.',
       'Research shows they place a very high value on social harmony and community involvement.',
       'They often report high levels of satisfaction in roles that allow them to directly help others in a structured environment.'
+    ],
+    interestingFacts: [
+      'Highly represented in nursing, teaching, and social work.',
+      'Often referred to as "The Consul" or "The Provider" due to their focus on community and social harmony.',
+      'Place a very high value on social validation and group cohesion.'
     ]
   },
   'ISTP': {
@@ -201,6 +306,11 @@ export const mbtiTypes: Record<string, {
       'ISTPs are highly represented in mechanics, engineering, and applied sciences.',
       'Studies suggest they have excellent spatial reasoning and mechanical aptitude.',
       'They often prefer hands-on learning and may struggle in traditional, lecture-based educational settings.'
+    ],
+    interestingFacts: [
+      'Often referred to as "The Virtuoso" or "The Mechanic" due to their natural affinity for tools and physical systems.',
+      'Highly represented in engineering, mechanics, and applied sciences.',
+      'Known for their cool-headedness in a crisis and ability to troubleshoot on the fly.'
     ]
   },
   'ISFP': {
@@ -213,6 +323,11 @@ export const mbtiTypes: Record<string, {
       'ISFPs are highly represented in the fine arts, design, and healthcare.',
       'Research indicates they are highly attuned to their physical environment and aesthetics.',
       'They often report a strong need for personal freedom and autonomy in their work.'
+    ],
+    interestingFacts: [
+      'Often referred to as "The Adventurer" or "The Artist" due to their strong aesthetic sense.',
+      'Highly sensitive to their physical environment and often express themselves through action or art rather than words.',
+      'Fiercely independent and often report a strong need for autonomy in their work.'
     ]
   },
   'ESTP': {
@@ -225,6 +340,11 @@ export const mbtiTypes: Record<string, {
       'ESTPs are highly represented in sales, marketing, and entrepreneurship.',
       'Studies show they are highly observant and quick to react to their immediate environment.',
       'They often prefer action over planning and may struggle with long-term strategic thinking.'
+    ],
+    interestingFacts: [
+      'Often referred to as "The Entrepreneur" or "The Dynamo" due to their high energy and action-oriented nature.',
+      'Highly observant and quick to react to their immediate environment.',
+      'Often prefer hands-on learning and may struggle in traditional, lecture-based educational settings.'
     ]
   },
   'ESFP': {
@@ -237,6 +357,11 @@ export const mbtiTypes: Record<string, {
       'ESFPs are highly represented in performing arts, hospitality, and event planning.',
       'Research suggests they are highly empathetic and skilled at reading the emotional states of others in real-time.',
       'They often struggle with delayed gratification and long-term planning.'
+    ],
+    interestingFacts: [
+      'Often referred to as "The Entertainer" due to their spontaneous and enthusiastic nature.',
+      'Highly empathetic and skilled at reading the emotional states of others in real-time.',
+      'Often struggle with delayed gratification and long-term planning.'
     ]
   }
 };
@@ -254,7 +379,8 @@ export function calculateMBTIScore(answers: Record<string, number>) {
   };
 
   const rawScores = { EI: 0, SN: 0, TF: 0, JP: 0 };
-  const maxRaw = 6 * 2; // 6 questions, max deviation is 2 per question (5-3 = 2)
+  const questionsPerDimension = mbtiQuestions.length / 4;
+  const maxRaw = questionsPerDimension * 2; // max deviation is 2 per question (5-3 = 2)
 
   mbtiQuestions.forEach(q => {
     const answer = answers[q.id];

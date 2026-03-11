@@ -35,6 +35,26 @@ const SUGGESTED_TESTS = [
     researchBase: 'Riso & Hudson (1996), Palmer (1988)',
   },
   {
+    id: 'phq9',
+    title: 'PHQ-9 Depression Assessment',
+    category: 'Clinical/Cognitive',
+    icon: Heart,
+    description: 'The Patient Health Questionnaire (PHQ-9) is a widely used, highly validated screening tool for measuring the severity of depressive symptoms.',
+    estimatedTime: '5 min',
+    status: 'Active',
+    researchBase: 'Kroenke, Spitzer, & Williams (2001)',
+  },
+  {
+    id: 'npi-40',
+    title: 'Narcissistic Personality Inventory (NPI-40)',
+    category: 'Personality',
+    icon: Brain,
+    description: 'The full, original 40-item clinical measure of subclinical narcissism, breaking down traits like Authority, Superiority, Entitlement, and Vanity.',
+    estimatedTime: '10-15 min',
+    status: 'Active',
+    researchBase: 'Raskin & Terry (1988)',
+  },
+  {
     id: 'cbt-cognitive-distortions',
     title: 'Cognitive Distortion Inventory',
     category: 'Clinical/Cognitive',
@@ -60,8 +80,66 @@ export default function Tests() {
   const { t } = useLanguage();
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      <div className="mb-12">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10">
+        <motion.svg
+          width="300"
+          height="300"
+          viewBox="0 0 300 300"
+          className="absolute top-0 right-0 text-royal-500/5 dark:text-royal-400/5"
+          animate={{
+            rotate: [0, -90, 0],
+            scale: [1, 1.05, 1],
+          }}
+          transition={{
+            duration: 25,
+            repeat: Infinity,
+            ease: "linear"
+          }}
+        >
+          <path d="M150,0 L300,150 L150,300 L0,150 Z" fill="none" stroke="currentColor" strokeWidth="2" strokeDasharray="15 15" />
+          <path d="M150,30 L270,150 L150,270 L30,150 Z" fill="none" stroke="currentColor" strokeWidth="1" strokeDasharray="5 5" />
+        </motion.svg>
+
+        <motion.svg
+          width="200"
+          height="200"
+          viewBox="0 0 200 200"
+          className="absolute bottom-0 left-0 text-royal-500/5 dark:text-royal-400/5"
+          animate={{
+            rotate: [0, 90, 0],
+            scale: [1, 1.1, 1],
+          }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            ease: "linear"
+          }}
+        >
+          <circle cx="100" cy="100" r="80" fill="none" stroke="currentColor" strokeWidth="2" strokeDasharray="10 10" />
+          <circle cx="100" cy="100" r="60" fill="none" stroke="currentColor" strokeWidth="1" strokeDasharray="5 5" />
+        </motion.svg>
+
+        <motion.svg
+          width="400"
+          height="400"
+          viewBox="0 0 400 400"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-royal-500/5 dark:text-royal-400/5"
+          animate={{
+            rotate: [0, -360],
+          }}
+          transition={{
+            duration: 40,
+            repeat: Infinity,
+            ease: "linear"
+          }}
+        >
+          <path d="M200,0 L400,200 L200,400 L0,200 Z" fill="none" stroke="currentColor" strokeWidth="1" strokeDasharray="20 20" />
+          <path d="M200,50 L350,200 L200,350 L50,200 Z" fill="none" stroke="currentColor" strokeWidth="2" strokeDasharray="10 10" />
+        </motion.svg>
+      </div>
+
+      <div className="mb-12 relative">
         <h1 className="text-4xl font-serif text-stone-900 dark:text-stone-50 mb-4 transition-colors">{t('tests.title')}</h1>
         <p className="text-xl text-stone-700 dark:text-stone-300 max-w-3xl leading-relaxed transition-colors">
           {t('tests.subtitle')}
@@ -81,20 +159,20 @@ export default function Tests() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className={`bg-white dark:bg-stone-900 border rounded-2xl p-6 flex flex-col transition-all duration-200 ${
                 isActive 
-                  ? 'border-emerald-200 dark:border-emerald-900/50 shadow-md hover:shadow-lg ring-1 ring-emerald-50 dark:ring-emerald-900/20' 
+                  ? 'border-royal-200 dark:border-royal-900/50 shadow-md hover:shadow-lg ring-1 ring-royal-50 dark:ring-royal-900/20 bg-royal-pattern' 
                   : 'border-stone-200 dark:border-stone-800 opacity-80'
               }`}
             >
               <div className="flex justify-between items-start mb-4">
                 <div className="flex items-center gap-3">
                   <div className={`w-10 h-10 rounded-full flex items-center justify-center transition-colors ${
-                    isActive ? 'bg-emerald-100 dark:bg-emerald-900/50 text-emerald-700 dark:text-emerald-400' : 'bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-400'
+                    isActive ? 'bg-royal-100 dark:bg-royal-900/50 text-royal-700 dark:text-royal-400' : 'bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-400'
                   }`}>
                     <Icon className="w-5 h-5" />
                   </div>
                   <div>
                     <span className={`text-xs font-medium uppercase tracking-wider transition-colors ${
-                      isActive ? 'text-emerald-700 dark:text-emerald-400' : 'text-stone-500 dark:text-stone-500'
+                      isActive ? 'text-royal-700 dark:text-royal-400' : 'text-stone-500 dark:text-stone-500'
                     }`}>{t(`tests.category.${test.category}`, test.category)}</span>
                     <h3 className="text-xl font-serif font-medium text-stone-900 dark:text-stone-50 transition-colors">{t(`tests.${test.id}.title`, test.title)}</h3>
                   </div>
@@ -117,7 +195,7 @@ export default function Tests() {
                   </span>
                 </div>
                 <span className={`px-2.5 py-1 rounded-full font-medium transition-colors ${
-                  isActive ? 'bg-emerald-100 dark:bg-emerald-900/30 text-emerald-800 dark:text-emerald-300' : 'bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-400'
+                  isActive ? 'bg-royal-100 dark:bg-royal-900/30 text-royal-800 dark:text-royal-300' : 'bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-400'
                 }`}>
                   {t(`tests.status.${test.status}`, test.status)}
                 </span>
@@ -126,7 +204,7 @@ export default function Tests() {
               {isActive && (
                 <Link 
                   to={`/tests/${test.id}`}
-                  className="mt-auto w-full flex items-center justify-center gap-2 py-3 bg-stone-900 dark:bg-emerald-600 text-white rounded-xl font-medium hover:bg-stone-800 dark:hover:bg-emerald-500 transition-colors"
+                  className="mt-auto w-full flex items-center justify-center gap-2 py-3 bg-stone-900 dark:bg-royal-600 text-white rounded-xl font-medium hover:bg-stone-800 dark:hover:bg-royal-500 transition-colors shadow-lg shadow-royal-500/10 dark:shadow-royal-400/10"
                 >
                   {t('tests.start')}
                   <ArrowRight className="w-4 h-4" />

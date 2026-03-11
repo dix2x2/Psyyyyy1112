@@ -68,10 +68,62 @@ export default function Profile() {
   }
 
   return (
-    <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      <div className="flex items-center gap-4 mb-12">
-        <div className="w-16 h-16 bg-emerald-100 dark:bg-emerald-900/40 rounded-full flex items-center justify-center text-emerald-600 dark:text-emerald-400">
-          <User className="w-8 h-8" />
+    <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10">
+        <motion.svg
+          width="400"
+          height="400"
+          viewBox="0 0 400 400"
+          className="absolute -top-20 -left-20 text-royal-500/5 dark:text-royal-400/5"
+          animate={{
+            rotate: [0, 360],
+          }}
+          transition={{
+            duration: 40,
+            repeat: Infinity,
+            ease: "linear"
+          }}
+        >
+          <circle cx="200" cy="200" r="180" fill="none" stroke="currentColor" strokeWidth="1" strokeDasharray="4 12" />
+          <circle cx="200" cy="200" r="140" fill="none" stroke="currentColor" strokeWidth="2" strokeDasharray="10 20" />
+          <circle cx="200" cy="200" r="100" fill="none" stroke="currentColor" strokeWidth="1" strokeDasharray="2 6" />
+        </motion.svg>
+
+        <motion.svg
+          width="300"
+          height="300"
+          viewBox="0 0 300 300"
+          className="absolute bottom-20 right-10 text-royal-500/5 dark:text-royal-400/5"
+          animate={{
+            rotate: [0, -180],
+            scale: [1, 1.1, 1],
+          }}
+          transition={{
+            duration: 35,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        >
+          <polygon points="150,0 300,150 150,300 0,150" fill="none" stroke="currentColor" strokeWidth="2" strokeDasharray="10 10" />
+          <polygon points="150,30 270,150 150,270 30,150" fill="none" stroke="currentColor" strokeWidth="1" strokeDasharray="5 5" />
+        </motion.svg>
+      </div>
+
+      <div className="flex items-center gap-4 mb-12 relative">
+        <div className="w-16 h-16 bg-royal-100 dark:bg-royal-900/40 rounded-full flex items-center justify-center text-royal-600 dark:text-royal-400 relative overflow-hidden">
+          <motion.div
+            className="absolute inset-0 bg-royal-200/50 dark:bg-royal-800/50"
+            animate={{
+              scale: [1, 1.5, 1],
+              opacity: [0.5, 0, 0.5]
+            }}
+            transition={{
+              duration: 3,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          />
+          <User className="w-8 h-8 relative z-10" />
         </div>
         <div>
           <h1 className="text-3xl font-serif text-stone-900 dark:text-stone-50 transition-colors">{t('profile.title')}</h1>
@@ -122,7 +174,7 @@ export default function Profile() {
 
       <div className="space-y-6">
         <h2 className="text-xl font-serif text-stone-900 dark:text-stone-50 flex items-center gap-2 transition-colors">
-          <Activity className="w-5 h-5 text-emerald-600 dark:text-emerald-500" />
+          <Activity className="w-5 h-5 text-royal-600 dark:text-royal-500" />
           {t('profile.recentAssessments')}
         </h2>
 
@@ -135,7 +187,7 @@ export default function Profile() {
             <p className="text-stone-600 dark:text-stone-400 mb-6 transition-colors">{t('profile.noResultsDesc')}</p>
             <Link 
               to="/tests" 
-              className="inline-flex items-center gap-2 px-6 py-3 bg-emerald-600 text-white rounded-full font-medium hover:bg-emerald-700 transition-colors"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-royal-600 text-white rounded-full font-medium hover:bg-royal-700 transition-colors"
             >
               {t('profile.takeTest')}
               <ArrowRight className="w-4 h-4" />
